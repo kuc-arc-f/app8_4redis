@@ -5,18 +5,12 @@ const redis = require("redis");
 const client = redis.createClient();
 
 //
-function convert_array(get_items , soated_items){
+function convert_array(get_items ){
     var ret = [];
     get_items.forEach(async function (get_item) {
         var row = JSON.parse(get_item || '[]')
-//        console.log( row.title )
-        soated_items.forEach(async function (soated_item){
-            if(row.id == soated_item){
-//        console.log( soated_item )
-                ret.push(row)
-            }
-        });
-
+//        console.log( row )
+        ret.push(row)
     });
     return ret;
 }
@@ -39,7 +33,8 @@ router.get('/tasks_index', function(req, res) {
             return;
         }else{
             client.mget(reply, function(err, reply_get) {
-                var d= convert_array(reply_get , reply)
+// console.log( reply_get );
+                var d= convert_array(reply_get)
                 var param = {"docs": d };
                 res.json(param); 
 //    console.log( "soated-items : ", d );
