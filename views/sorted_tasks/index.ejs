@@ -55,30 +55,6 @@ class List extends React.Component {
 }
 
 ReactDOM.render(<List />, document.getElementById('app'));
-
-/*
-var task_items = [];
-
-var TaskIndex = {
-    get_items: async function(){
-        await axios.get("/api_list_tasks/tasks_index").then(res =>  {
-            task_items = res.data.docs
-        })
-        this.dispRow();
-    },
-    dispRow: async function(){
-        if(task_items instanceof Array){
-            task_items.map(function(object, index){
-                var dat = JSON.parse(object || '[]')
-                console.log( dat.id )
-            })
-        }
-    },
-}
-$(function(){
-    TaskIndex.get_items();
-});
-*/
 </script> 
 
 <!-- -->

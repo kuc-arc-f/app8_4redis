@@ -12,6 +12,7 @@
 
 node/express( es6 ) + redis + React.js, CRUD sample 
 
+* redis version : 4.0.9
 
 ***
 ### setup
@@ -30,6 +31,8 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
 
 ***
 ### more
+
+https://note.com/knaka0209/n/n92c393a90f7b
 
 ***
 
